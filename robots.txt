@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shahidmachinery.vercel.app/sitemap.xml
