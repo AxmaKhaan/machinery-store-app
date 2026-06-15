@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Bearing set">
+  <rect width="640" height="400" fill="#e6ecef"/>
+  <circle cx="320" cy="200" r="132" fill="#29313b"/>
+  <circle cx="320" cy="200" r="76" fill="#e6ecef"/>
+  <circle cx="320" cy="200" r="38" fill="#aebbc2"/>
+  <g fill="#c96d2d">
+    <circle cx="320" cy="87" r="19"/>
+    <circle cx="400" cy="120" r="19"/>
+    <circle cx="433" cy="200" r="19"/>
+    <circle cx="400" cy="280" r="19"/>
+    <circle cx="320" cy="313" r="19"/>
+    <circle cx="240" cy="280" r="19"/>
+    <circle cx="207" cy="200" r="19"/>
+    <circle cx="240" cy="120" r="19"/>
+  </g>
+</svg>

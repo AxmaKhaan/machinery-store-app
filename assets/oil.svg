@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Engine oil pack">
+  <rect width="640" height="400" fill="#e7ecef"/>
+  <path d="M246 86h148l34 72v154c0 23-19 42-42 42H242c-23 0-42-19-42-42V158l46-72Z" fill="#29313b"/>
+  <rect x="260" y="54" width="106" height="44" rx="12" fill="#c96d2d"/>
+  <rect x="232" y="166" width="176" height="112" rx="14" fill="#f8fafb"/>
+  <path d="M294 232c0 26 53 26 53 0 0-18-27-54-27-54s-26 36-26 54Z" fill="#1f6f5b"/>
+  <text x="320" y="307" text-anchor="middle" font-family="Arial" font-size="26" font-weight="700" fill="#f8fafb">ENGINE OIL</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Industrial drive belt">
+  <rect width="640" height="400" fill="#e4e9ed"/>
+  <path d="M190 109h260c54 0 98 44 98 98s-44 98-98 98H190c-54 0-98-44-98-98s44-98 98-98Z" fill="#2b333c"/>
+  <path d="M199 155h242c29 0 52 23 52 52s-23 52-52 52H199c-29 0-52-23-52-52s23-52 52-52Z" fill="#e4e9ed"/>
+  <path d="M210 120l-70 165M265 120l-70 165M320 120l-70 165M375 120l-70 165M430 120l-70 165M485 133l-64 152" stroke="#4a5661" stroke-width="10"/>
+</svg>

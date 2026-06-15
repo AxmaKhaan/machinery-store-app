@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PartsLine Machinery Orders</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand-block">
+        <p class="eyebrow">Machinery Parts Supplier</p>
+        <h1>PartsLine Orders</h1>
+        <p class="header-copy">Batteries, filters, belts, starter motors, bearings, and service parts.</p>
+      </div>
+      <div class="header-actions">
+        <span class="seller-number">0321 4700326</span>
+        <a class="call-button" href="tel:+923214700326">Call Seller</a>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="catalog" aria-label="Machinery parts catalog">
+        <div class="catalog-head">
+          <div>
+            <p class="eyebrow">Parts Catalog</p>
+            <h2>Choose machinery parts</h2>
+          </div>
+          <div class="trust-row" aria-label="Service highlights">
+            <span>Fast quote</span>
+            <span>Model matching</span>
+            <span>Delivery support</span>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-box">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Battery, filter, belt..." />
+          </label>
+          <label class="select-box">
+            <span>Category</span>
+            <select id="categoryFilter">
+              <option value="all">All parts</option>
+            </select>
+          </label>
+          <label class="select-box">
+            <span>Sort</span>
+            <select id="sortFilter">
+              <option value="featured">Featured</option>
+              <option value="name">Name A-Z</option>
+              <option value="category">Category</option>
+            </select>
+          </label>
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+
+      <aside class="order-panel" aria-label="Order details">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Order Request</p>
+            <h2>Your selected parts</h2>
+          </div>
+          <span id="itemCount" class="count-pill">0</span>
+        </div>
+
+        <div id="cartItems" class="cart-items empty">
+          Select parts from the catalog to build an order.
+        </div>
+        <button type="button" id="clearOrder" class="clear-button">Clear Order</button>
+
+        <form id="orderForm" class="order-form">
+          <label>
+            Customer name
+            <input id="customerName" type="text" placeholder="Full name" required />
+          </label>
+          <label>
+            Phone number
+            <input id="customerPhone" type="tel" placeholder="03XX XXXXXXX" required />
+          </label>
+          <label>
+            Delivery location
+            <input id="customerLocation" type="text" placeholder="City or full address" required />
+          </label>
+          <div class="form-row">
+            <label>
+              Delivery option
+              <select id="deliveryOption">
+                <option>Delivery required</option>
+                <option>Pickup from shop</option>
+                <option>Confirm before dispatch</option>
+              </select>
+            </label>
+            <label>
+              Urgency
+              <select id="urgencyOption">
+                <option>Normal</option>
+                <option>Urgent</option>
+                <option>Same day if available</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              Required date
+              <input id="requiredDate" type="date" />
+            </label>
+            <label>
+              Preferred contact
+              <select id="contactMethod">
+                <option>WhatsApp</option>
+                <option>Phone call</option>
+                <option>Email</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            Extra requirement
+            <textarea id="customerNote" rows="3" placeholder="Machine model, brand, size, urgent delivery, etc."></textarea>
+          </label>
+          <div class="actions">
+            <button type="button" id="copyOrder">Copy Order</button>
+            <button type="submit" class="primary">Send to Seller</button>
+          </div>
+          <a id="whatsappOrder" class="whatsapp-link" href="#" target="_blank" rel="noreferrer">Send by WhatsApp</a>
+          <p id="statusMessage" class="status" role="status"></p>
+        </form>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

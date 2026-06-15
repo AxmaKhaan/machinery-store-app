@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Hydraulic filter">
+  <rect width="640" height="400" fill="#e7ecef"/>
+  <ellipse cx="320" cy="115" rx="124" ry="42" fill="#b8c4ca"/>
+  <rect x="196" y="114" width="248" height="174" fill="#f8fafb"/>
+  <ellipse cx="320" cy="288" rx="124" ry="42" fill="#d0d9de"/>
+  <ellipse cx="320" cy="114" rx="124" ry="42" fill="#f8fafb"/>
+  <path d="M232 150h176M232 184h176M232 218h176M232 252h176" stroke="#1f6f5b" stroke-width="12" stroke-linecap="round"/>
+  <rect x="246" y="73" width="148" height="35" rx="12" fill="#29313b"/>
+</svg>

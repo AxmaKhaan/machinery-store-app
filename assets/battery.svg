@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Heavy duty battery">
+  <rect width="640" height="400" fill="#dfe8ec"/>
+  <rect x="98" y="120" width="444" height="188" rx="22" fill="#29313b"/>
+  <rect x="136" y="94" width="62" height="34" rx="8" fill="#1f6f5b"/>
+  <rect x="442" y="94" width="62" height="34" rx="8" fill="#c96d2d"/>
+  <rect x="132" y="158" width="376" height="104" rx="10" fill="#f8fafb"/>
+  <path d="M190 210h76M228 172v76M374 210h76" stroke="#29313b" stroke-width="20" stroke-linecap="round"/>
+  <text x="320" y="287" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" fill="#f8fafb">12V POWER</text>
+</svg>

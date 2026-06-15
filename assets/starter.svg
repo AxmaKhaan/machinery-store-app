@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Starter motor">
+  <rect width="640" height="400" fill="#e8edf0"/>
+  <rect x="154" y="132" width="292" height="136" rx="38" fill="#56616d"/>
+  <rect x="415" y="158" width="94" height="84" rx="18" fill="#29313b"/>
+  <circle cx="176" cy="200" r="65" fill="#c96d2d"/>
+  <circle cx="176" cy="200" r="31" fill="#f8fafb"/>
+  <rect x="238" y="108" width="148" height="34" rx="15" fill="#1f6f5b"/>
+  <path d="M252 166h126M252 200h126M252 234h126" stroke="#dbe3e7" stroke-width="10" stroke-linecap="round"/>
+</svg>
