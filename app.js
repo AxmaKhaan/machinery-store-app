@@ -76,6 +76,9 @@ const itemCount = document.querySelector("#itemCount");
 const orderForm = document.querySelector("#orderForm");
 const statusMessage = document.querySelector("#statusMessage");
 const whatsappOrder = document.querySelector("#whatsappOrder");
+const productModal = document.querySelector("#productModal");
+const modalContent = document.querySelector("#modalContent");
+let activeProductId = null;
 
 function init() {
   const categories = [...new Set(products.map((product) => product.category))].sort();
@@ -96,6 +99,8 @@ function init() {
   document.querySelector("#clearOrder").addEventListener("click", clearOrder);
   document.querySelector("#copyOrder").addEventListener("click", copyOrder);
   orderForm.addEventListener("submit", sendOrder);
+  productModal.addEventListener("click", handleModalClick);
+  document.addEventListener("keydown", handleKeyDown);
   renderProducts();
   renderCart();
 }
@@ -118,7 +123,7 @@ function renderProducts() {
     .map((product) => {
       const qty = cart.get(product.id) || 0;
       return `
-        <article class="product-card">
+        <article class="product-card" tabindex="0" role="button" aria-label="Open ${product.name} details" onclick="openProductDetail('${product.id}')" onkeydown="openProductDetailFromKey(event, '${product.id}')">
           <img src="${product.image}" alt="${product.name}" />
           <div class="product-body">
             <div class="card-top">
@@ -133,9 +138,9 @@ function renderProducts() {
             <div class="price-row">
               <span class="price">${product.price}</span>
               <div class="qty-control" aria-label="${product.name} quantity">
-                <button type="button" onclick="changeQty('${product.id}', -1)">-</button>
+                <button type="button" onclick="event.stopPropagation(); changeQty('${product.id}', -1)">-</button>
                 <span>${qty}</span>
-                <button type="button" onclick="changeQty('${product.id}', 1)">+</button>
+                <button type="button" onclick="event.stopPropagation(); changeQty('${product.id}', 1)">+</button>
               </div>
             </div>
           </div>
@@ -169,6 +174,9 @@ function changeQty(productId, amount) {
 
   renderProducts();
   renderCart();
+  if (activeProductId && !productModal.hidden) {
+    openProductDetail(activeProductId);
+  }
 }
 
 function getOrderLines() {
@@ -204,6 +212,72 @@ function renderCart() {
   }
 
   updateShareLinks();
+}
+
+function openProductDetailFromKey(event, productId) {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    openProductDetail(productId);
+  }
+}
+
+function openProductDetail(productId) {
+  const product = products.find((item) => item.id === productId);
+  if (!product) return;
+
+  activeProductId = productId;
+  const qty = cart.get(productId) || 0;
+  modalContent.innerHTML = `
+    <div class="modal-media">
+      <img src="${product.image}" alt="${product.name}" />
+    </div>
+    <div class="modal-details">
+      <div>
+        <p class="eyebrow">Product Detail</p>
+        <h2 id="modalTitle">${product.name}</h2>
+      </div>
+      <div class="modal-meta">
+        <span class="tag">${product.category}</span>
+        <span class="stock-badge">${product.status}</span>
+        <span class="tag">${product.sku}</span>
+      </div>
+      <p class="meta">${product.detail}</p>
+      <ul class="detail-list">
+        <li><span>Price</span><strong>${product.price}</strong></li>
+        <li><span>Part code</span><strong>${product.sku}</strong></li>
+        <li><span>Category</span><strong>${product.category}</strong></li>
+        <li><span>Availability</span><strong>${product.status}</strong></li>
+      </ul>
+      <div class="modal-actions">
+        <div class="qty-control" aria-label="${product.name} detail quantity">
+          <button type="button" onclick="changeQty('${product.id}', -1)">-</button>
+          <span>${qty}</span>
+          <button type="button" onclick="changeQty('${product.id}', 1)">+</button>
+        </div>
+        <button type="button" class="primary" data-close-modal>Continue Order</button>
+      </div>
+    </div>
+  `;
+  productModal.hidden = false;
+  document.body.classList.add("modal-open");
+}
+
+function closeProductDetail() {
+  productModal.hidden = true;
+  activeProductId = null;
+  document.body.classList.remove("modal-open");
+}
+
+function handleModalClick(event) {
+  if (event.target.hasAttribute("data-close-modal")) {
+    closeProductDetail();
+  }
+}
+
+function handleKeyDown(event) {
+  if (event.key === "Escape" && !productModal.hidden) {
+    closeProductDetail();
+  }
 }
 
 function clearOrder() {
@@ -273,4 +347,6 @@ function sendOrder(event) {
 }
 
 window.changeQty = changeQty;
+window.openProductDetail = openProductDetail;
+window.openProductDetailFromKey = openProductDetailFromKey;
 init();
